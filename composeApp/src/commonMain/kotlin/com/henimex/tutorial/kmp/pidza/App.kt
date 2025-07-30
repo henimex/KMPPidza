@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -24,6 +23,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.henimex.tutorial.kmp.pidza.components.ChipButton
+import com.henimex.tutorial.kmp.pidza.components.DeliveryChip
 import com.henimex.tutorial.kmp.pidza.components.PrimaryButton
 import com.henimex.tutorial.kmp.pidza.components.SecondaryButton
 import com.henimex.tutorial.kmp.pidza.designFiles.MainColor
@@ -82,18 +82,8 @@ fun App() {
                 }
             }
 
-            Text(
-                text = "20 min",
-                color = TypeColor2,
-                fontSize = 22.sp,
-                fontWeight = FontWeight.Bold
-            )
-            Text(
-                text = "Delivery",
-                color = MainColor,
-                fontSize = 22.sp,
-                fontWeight = FontWeight.Bold
-            )
+            DeliveryChip(specText = "Delivery", timerText = "20 min")
+
             Text(
                 text = "Meat lover, get ready to meet your pizza!",
                 color = TypeColor2,
@@ -104,6 +94,7 @@ fun App() {
             )
 
             HorizontalDivider(thickness = 1.dp, color = Color.Black)
+
             Spacer(modifier = Modifier.height(20.dp))
 
             Row(
