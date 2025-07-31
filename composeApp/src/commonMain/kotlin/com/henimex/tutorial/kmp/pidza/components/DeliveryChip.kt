@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.henimex.tutorial.kmp.pidza.designFiles.MainColor
+import com.henimex.tutorial.kmp.pidza.theme.LocalAppColors
 import kmppidza.composeapp.generated.resources.Res
 import kmppidza.composeapp.generated.resources.timer
 import org.jetbrains.compose.resources.painterResource
@@ -21,15 +21,16 @@ import org.jetbrains.compose.resources.painterResource
 
 @Composable
 fun DeliveryChip(specText:String, timerText:String) {
+    val colors = LocalAppColors.current
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
             .border(
                 width = 1.dp,
-                color = Color.Gray,
+                color = colors.mainColor,
                 shape = RoundedCornerShape(50)
             )
-            .background(Color.White, shape = RoundedCornerShape(50))
+            .background(colors.background, shape = RoundedCornerShape(50))
             .padding(horizontal = 12.dp, vertical = 6.dp)
     ) {
         Image(
@@ -41,14 +42,14 @@ fun DeliveryChip(specText:String, timerText:String) {
         Spacer(modifier = Modifier.width(6.dp))
         Text(
             text = timerText,
-            color = Color.Black,
+            color = colors.typeSecondary,
             fontSize = 20.sp,
             fontWeight = FontWeight.Medium
         )
         Spacer(modifier = Modifier.width(4.dp))
         Text(
             text = specText,
-            color = MainColor,
+            color = colors.mainColor,
             fontSize = 22.sp,
             fontWeight = FontWeight.Bold
         )
